@@ -30,4 +30,4 @@ Here is a working live demo : swift-list-umber.vercel.app
 
 ## Team
 
-[![Rachel Williams](https://avatars1.githubusercontent.com/u/12688534?v=3&s=144)](https://www.linkedin.com/in/rachel-williams-055938211/)
+[![Rachel Williams](https://www.linkedin.com/in/rachel-williams-055938211/)
