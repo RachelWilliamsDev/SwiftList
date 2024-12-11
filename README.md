@@ -1,36 +1,33 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# SwiftList
 
-## Getting Started
+<table>
+<tr>
+<td>
+  SwiftList is a streamlined web application designed to help you efficiently manage tasks. Whether you're organizing personal to-dos or coordinating with a team, SwiftList makes it easy to:
 
-First, run the development server:
+<ul>
+<li>Add tasks with ease.</li>
+<li>Edit details as things change.</li>
+<li>Delete tasks that are no longer needed.</li>
+<li>Assign tasks to keep everyone on track.</li>
+<li>Stay productive and keep your tasks under control with SwiftList!</li>
+</ul>
+</td>
+</tr>
+</table>
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Demo
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Here is a working live demo : swift-list-umber.vercel.app
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Site
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Built with
 
-## Learn More
+- [NextJs] - Used by some of the world's largest companies, Next.js enables you to create high-quality web applications with the power of React components.
+- [Shadcn] - Beautifully designed components that you can copy and paste into your apps. Made with Tailwind CSS. Open source.
+- [TailwindCss] - A utility-first CSS framework packed with classes like flex, pt-4, text-center and rotate-90 that can be composed to build any design, directly in your markup.
 
-To learn more about Next.js, take a look at the following resources:
+## Team
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+[![Rachel Williams](https://avatars1.githubusercontent.com/u/12688534?v=3&s=144)](https://www.linkedin.com/in/rachel-williams-055938211/)
