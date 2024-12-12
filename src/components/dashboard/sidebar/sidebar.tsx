@@ -13,70 +13,79 @@ import {
 } from '@/components/ui/sidebar';
 import { menuItems } from '@/constants';
 import { cn } from '@/lib/utils';
-import { MenuIcon } from 'lucide-react';
+import { LogInIcon, LogOutIcon, MenuIcon } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
+import { useState } from 'react';
 
 const Sidebar = () => {
   const { open, toggleSidebar } = useSidebar();
+  //TODO: update this after signup is implemented
+  const [isAuthenticated, setIsAuthenticated] = useState(true);
+  const pathname = usePathname();
 
   return (
     <DashboardSidebar collapsible="icon">
-      <div className={cn('flex items-center', open ? 'justify-between p-2' : 'p-3')}>
-        {open ? (
-          <div className="flex items-center -space-x-2">
-            <Image src="/SwiftListLogo.png" width={40} height={40} alt="Swift List Logo" />
-            <span>wiftList</span>
-          </div>
-        ) : (
-          <Image src="/SwiftListLogo.png" width={24} height={24} alt="Swift List Logo" />
-        )}
+      <div className={cn('flex items-center', open ? 'justify-between px-2 py-5' : 'px-3 py-5')}>
+        <div className="flex items-center">
+          <Image
+            src="/SwiftListLogo.png"
+            width={open ? 40 : 24} // Dynamically change width based on `open`
+            height={open ? 40 : 24} // Dynamically change height based on `open`
+            alt="Swift List Logo"
+          />
+          {open && <span>wiftList</span>}
+        </div>
+
         {open && <MenuIcon onClick={toggleSidebar} className="cursor-pointer" />}
       </div>
+
       <SidebarContent>
         {menuItems.map((section, i) => (
           <SidebarGroup key={i}>
             {section.title && <SidebarGroupLabel>{section.title}</SidebarGroupLabel>}
             <SidebarGroupContent>
               <SidebarMenu>
-                {section.list.map((listItem, j) => (
-                  <SidebarMenuItem key={listItem.title}>
-                    <SidebarMenuButton asChild isActive>
-                      <Link href={listItem.link}>
-                        <listItem.icon />
-                        <span>{listItem.title}</span>
-                      </Link>
-                    </SidebarMenuButton>
-                  </SidebarMenuItem>
-                ))}
+                {section.list.map((listItem) => {
+                  const isActive = pathname === listItem.link;
+
+                  return (
+                    <SidebarMenuItem key={listItem.title}>
+                      <SidebarMenuButton asChild isActive={isActive}>
+                        <Link href={listItem.link}>
+                          <listItem.icon />
+                          <span>{listItem.title}</span>
+                        </Link>
+                      </SidebarMenuButton>
+                    </SidebarMenuItem>
+                  );
+                })}
               </SidebarMenu>
             </SidebarGroupContent>
           </SidebarGroup>
         ))}
       </SidebarContent>
-      <SidebarFooter>
+      <SidebarFooter className="py-5">
         {open && (
           <>
-            <span className="px-4 text-xs font-thin">Toggle the sidebar with</span>
-            <span className="px-4 text-xs font-thin">Ctrl/Cmd + B</span>
+            <span className="px-2 text-xs font-thin">Toggle the sidebar with</span>
+            <span className="px-2 text-xs font-thin">Ctrl/Cmd + B</span>
           </>
         )}
+        <SidebarMenuButton isActive>
+          {isAuthenticated ? (
+            <div className="flex items-center gap-2">
+              <LogOutIcon size={16} /> <span>Logout</span>
+            </div>
+          ) : (
+            <div className="flex items-center gap-2">
+              <LogInIcon size={16} /> <span>Login</span>
+            </div>
+          )}
+        </SidebarMenuButton>
       </SidebarFooter>
     </DashboardSidebar>
-    // <div className="">
-    //   <ul>
-    //     {menuItems.map((section, i) => (
-    //       <li key={i}>
-    //         <span>{section.title}</span>
-    //         {section.list.map((listItem, j) => (
-    //           <div key={j}>
-    //             <MenuItem item={listItem} />
-    //           </div>
-    //         ))}
-    //       </li>
-    //     ))}
-    //   </ul>
-    // </div>
   );
 };
 export default Sidebar;
