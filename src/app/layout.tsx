@@ -1,3 +1,4 @@
+import { TooltipProvider } from '@/components/ui/tooltip';
 import type { Metadata } from 'next';
 import '../styles/globals.css';
 
@@ -13,7 +14,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="antialiased">{children}</body>
+      <TooltipProvider>
+        <body className="antialiased">{children}</body>
+      </TooltipProvider>
     </html>
   );
 }
