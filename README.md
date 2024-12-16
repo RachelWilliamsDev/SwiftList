@@ -18,7 +18,7 @@
 
 ## Demo
 
-Here is a working live demo : https://swift-list-umber.vercel.app
+Here is a working live demo : https://swift-list-umber.vercel.app/dashboard
 
 ## Site
 
