@@ -1,9 +1,10 @@
+'use client';
 import Navbar from '@/components/dashboard/navbar/navbar';
 import Sidebar from '@/components/dashboard/sidebar/sidebar';
 import { Separator } from '@/components/ui/separator';
 import { SidebarProvider } from '@/components/ui/sidebar';
 
-const Layout = ({ children }: DashboardLayoutProps) => {
+const DashboardLayout = ({ children }: DashboardLayoutProps) => {
   return (
     <SidebarProvider defaultOpen>
       <div className="flex w-full">
@@ -18,4 +19,4 @@ const Layout = ({ children }: DashboardLayoutProps) => {
     </SidebarProvider>
   );
 };
-export default Layout;
+export default DashboardLayout;

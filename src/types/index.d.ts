@@ -5,7 +5,18 @@ declare type ChildrenProp = {
 declare type DashboardLayoutProps = ChildrenProp & {
   //future props can go here
 };
+
+declare type MarketingLayout = ChildrenProp & {
+  //future props can go here
+};
+
+declare type ClerkLayoutProps = ChildrenProp & {
+  //future props can go here
+};
 declare type WrapperProps = ChildrenProp & {
+  //future props can go here
+};
+declare type PlatformLayoutProps = ChildrenProp & {
   //future props can go here
 };
 
