@@ -3,11 +3,11 @@ import Navbar from '@/components/homepage/navbar/navbar';
 
 const ClerkLayout = ({ children }: ClerkLayoutProps) => {
   return (
-    <div className="flex h-full items-center justify-center">
+    <>
       <Navbar />
-      {children}
+      <div className="flex h-full w-full items-center justify-center">{children}</div>
       <Footer />
-    </div>
+    </>
   );
 };
 export default ClerkLayout;
