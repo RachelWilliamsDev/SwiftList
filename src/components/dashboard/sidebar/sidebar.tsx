@@ -13,16 +13,17 @@ import {
 } from '@/components/ui/sidebar';
 import { menuItems } from '@/constants';
 import { cn } from '@/lib/utils';
+import { useAuth, useUser } from '@clerk/nextjs';
 import { LogInIcon, LogOutIcon, MenuIcon } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { useState } from 'react';
 
 const Sidebar = () => {
   const { open, toggleSidebar } = useSidebar();
   //TODO: update this after signup is implemented
-  const [isAuthenticated, setIsAuthenticated] = useState(true);
+  const { userId } = useAuth();
+  const { user } = useUser();
   const pathname = usePathname();
 
   return (
@@ -73,8 +74,8 @@ const Sidebar = () => {
             <span className="px-2 text-xs font-thin">Ctrl/Cmd + B</span>
           </>
         )}
-        <SidebarMenuButton isActive>
-          {isAuthenticated ? (
+        <SidebarMenuButton>
+          {userId ? (
             <div className="flex items-center gap-2">
               <LogOutIcon size={16} /> <span>Logout</span>
             </div>

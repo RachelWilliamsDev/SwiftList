@@ -1,15 +1,15 @@
 'use client';
 
 import Footer from '@/components/homepage/footer/footer';
-import Hero from '@/components/homepage/hero/hero';
 import Navbar from '@/components/homepage/navbar/navbar';
 
-export default function Home() {
+const MarketingLayout = ({ children }: DashboardLayoutProps) => {
   return (
-    <div className="flex flex-col">
+    <div className="h-full">
       <Navbar />
-      <Hero />
+      <main>{children}</main>
       <Footer />
     </div>
   );
-}
+};
+export default MarketingLayout;

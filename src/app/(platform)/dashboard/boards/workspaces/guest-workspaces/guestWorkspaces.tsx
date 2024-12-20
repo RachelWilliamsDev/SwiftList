@@ -1,5 +1,4 @@
 import Container from '@/components/global/container/container';
-import { Button } from '@/components/ui/button';
 import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover';
 import { Text } from '@/components/ui/text';
 import { PopoverArrow, PopoverClose } from '@radix-ui/react-popover';
@@ -17,9 +16,7 @@ const GuestWorkspaces = () => {
         </Text>
         <Popover>
           <PopoverTrigger>
-            <Button variant="link" size="icon" aria-label="More information about guest workspaces">
-              <InfoIcon />
-            </Button>
+            <InfoIcon />
           </PopoverTrigger>
           <PopoverContent className="w-80">
             <div className="flex flex-col justify-center">

@@ -9,6 +9,7 @@ import {
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { useSidebar } from '@/components/ui/sidebar';
+import { UserButton } from '@clerk/nextjs';
 import { BellIcon, MenuIcon, SearchIcon, SettingsIcon } from 'lucide-react';
 import { usePathname } from 'next/navigation';
 import React from 'react';
@@ -54,6 +55,7 @@ const Navbar = () => {
           <Button variant="ghost" size="icon">
             <SettingsIcon size={20} />
           </Button>
+          <UserButton />
         </div>
       </div>
     </div>
