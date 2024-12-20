@@ -27,6 +27,7 @@ Here is a working live demo : https://swift-list-umber.vercel.app
 - [NextJs] - Used by some of the world's largest companies, Next.js enables you to create high-quality web applications with the power of React components.
 - [Shadcn] - Beautifully designed components that you can copy and paste into your apps. Made with Tailwind CSS. Open source.
 - [TailwindCss] - A utility-first CSS framework packed with classes like flex, pt-4, text-center and rotate-90 that can be composed to build any design, directly in your markup.
+- [Clerk] - The most comprehensive User Management Platform
 
 ## Team
 
