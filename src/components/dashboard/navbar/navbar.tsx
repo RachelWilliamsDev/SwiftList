@@ -9,7 +9,7 @@ import {
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { useSidebar } from '@/components/ui/sidebar';
-import { UserButton } from '@clerk/nextjs';
+import { OrganizationSwitcher, UserButton } from '@clerk/nextjs';
 import { BellIcon, MenuIcon, SearchIcon, SettingsIcon } from 'lucide-react';
 import { usePathname } from 'next/navigation';
 import React from 'react';
@@ -23,6 +23,21 @@ const Navbar = () => {
     <div className="flex items-center justify-between pb-5">
       <div className="flex items-center gap-5">
         {!open || isMobile ? <MenuIcon onClick={toggleSidebar} className="cursor-pointer" /> : null}
+        <OrganizationSwitcher
+          hidePersonal
+          afterCreateOrganizationUrl="/organization/:id"
+          afterLeaveOrganizationUrl="/select-org"
+          afterSelectOrganizationUrl="organization/:id"
+          appearance={{
+            elements: {
+              rootBox: {
+                display: 'flex',
+                justifyContent: 'center',
+                alignItems: 'center',
+              },
+            },
+          }}
+        />
         <Breadcrumb>
           <BreadcrumbList>
             {paths.map((path, i) => {
@@ -55,7 +70,16 @@ const Navbar = () => {
           <Button variant="ghost" size="icon">
             <SettingsIcon size={20} />
           </Button>
-          <UserButton />
+          <UserButton
+            appearance={{
+              elements: {
+                avatarBox: {
+                  height: 30,
+                  width: 30,
+                },
+              },
+            }}
+          />
         </div>
       </div>
     </div>
