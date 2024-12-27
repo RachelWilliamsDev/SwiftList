@@ -44,7 +44,7 @@ export const menuItems: MenuItem[] = [
       {
         title: 'Create a Workspace',
         icon: PlusIcon,
-        link: '',
+        link: '/select-org',
       },
     ],
   },
