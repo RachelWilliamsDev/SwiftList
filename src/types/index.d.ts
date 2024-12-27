@@ -6,6 +6,10 @@ declare type DashboardLayoutProps = ChildrenProp & {
   //future props can go here
 };
 
+declare type OrganizationLayoutProps = ChildrenProp & {
+  //future props can go here
+};
+
 declare type MarketingLayout = ChildrenProp & {
   //future props can go here
 };
@@ -48,4 +52,16 @@ declare type RecentCardProps = {
   src: string;
   edit: string;
   type: string;
+};
+
+declare type SidebarProps = {
+  storageKey?: string;
+};
+
+declare type AccordionMenuItemProps = {
+  value: string;
+  imageUrl: string;
+  isActive: boolean;
+  isExpanded: boolean;
+  name: string;
 };
